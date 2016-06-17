@@ -1,7 +1,7 @@
 # When a new instance of the copper class is created, it is worth 1 treasure.
 
 class Copper
-  attr_reader :worth
+  attr_reader :worth, :vp
 
   def initialize
     @worth = 1
