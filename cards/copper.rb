@@ -7,8 +7,4 @@ class Copper
     @worth = 1
     @cost = 0
   end
-
-  def to_s
-    "Copper"
-  end
 end

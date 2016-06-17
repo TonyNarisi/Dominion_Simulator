@@ -26,7 +26,7 @@ class Player
 
   def see_hand
     @hand.each do |card|
-      puts card
+      puts card.class
     end
   end
 end
