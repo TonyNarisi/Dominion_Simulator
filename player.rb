@@ -11,7 +11,7 @@ class Player
   # Need to add victory cards to starting deck
   def initialize
     @deck = [Copper.new, Copper.new, Copper.new, Copper.new, Copper.new, Copper.new, Copper.new]
-    @hand = []
+    @hand = [Copper.new]
     @discard_pile = []
   end
 
@@ -23,8 +23,15 @@ class Player
     end
     p total_worth
   end
+
+  def see_hand
+    @hand.each do |card|
+      puts card
+    end
+  end
 end
 
 player = Player.new
 p player.deck
 player.eval_worth
+player.see_hand
