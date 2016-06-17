@@ -6,5 +6,6 @@ class Copper
   def initialize
     @worth = 1
     @cost = 0
+    @vp = 0
   end
 end

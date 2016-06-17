@@ -5,6 +5,8 @@ class Cellar
   def initialize
     @cost = 2
     @played = false
+    @vp = 0
+    @worth = 0
   end
 
   def play_card
@@ -19,7 +21,7 @@ class Cellar
     @action += 1
   end
 
-  def discard_cards
+  def discard_cards(num)
   end
 
   def draw_cards

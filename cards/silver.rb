@@ -4,5 +4,6 @@ class Silver
   def initialize
     @worth = 2
     @cost = 3
+    @vp = 0
   end
 end
