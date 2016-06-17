@@ -3,5 +3,6 @@
 class Gold
   def initialize
     @worth = 3
+    @cost = 6
   end
 end

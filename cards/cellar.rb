@@ -4,6 +4,7 @@
 class Cellar
   def initialize
     @cost = 2
+    @played = false
   end
 
   def play_card
