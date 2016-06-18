@@ -46,12 +46,12 @@ class Player
   end
 
   def discard_hand
-    @hand.each {|card| @discard_pile << @hand.delete(card)}
+    @hand.length.times {@discard_pile << @hand.delete_at(0)}
   end
 
   # Need to add shuffle mechanism to randomize deck
   def shuffle_deck_from_discard
-    @discard_pile.each {|card| @deck << @discard_pile.delete(card)}
+    @discard_pile.length.times {@deck << @discard_pile.delete_at(0)}
   end
 end
 
