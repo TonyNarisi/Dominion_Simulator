@@ -35,11 +35,45 @@ class Player
   end
 
   def draw_hand
-    5.times { hand << @deck.delete_at(0) }
+    5.times do 
+      if @deck.length >= 1
+        @hand << @deck.delete_at(0)
+      else
+        shuffle_deck_from_discard
+        @hand << @deck.delete_at(0)
+      end
+    end
+  end
+
+  def discard_hand
+    @hand.each {|card| @discard_pile << @hand.delete(card)}
+  end
+
+  # Need to add shuffle mechanism to randomize deck
+  def shuffle_deck_from_discard
+    @discard_pile.each {|card| @deck << @discard_pile.delete(card)}
   end
 end
 
 player = Player.new
-player.see_hand
+p "Deck"
+p player.deck
 player.draw_hand
+p "Hand"
+player.see_hand
+p "Deck"
+p player.deck
+player.discard_hand
+player.draw_hand
+p "Deck"
+p player.deck
+p "Hand"
+player.see_hand
+p "Discard pile"
+p player.discard_pile
+player.discard_hand
+player.draw_hand
+p "Deck"
+p player.deck
+p "Hand"
 player.see_hand
