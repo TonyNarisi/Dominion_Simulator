@@ -22,21 +22,24 @@ class Player
     total_worth
   end
 
+  def eval_vp
+    total_vp = 0
+    [@deck, @hand, @discard_pile].each {|player_area| player_area.each {|card| total_vp += card.vp}}
+    total_vp
+  end
+
   def see_hand
     @hand.each do |card|
       puts card.class
     end
   end
 
-  def eval_vp
-    total_vp = 0
-    [@deck, @hand, @discard_pile].each {|player_area| player_area.each {|card| total_vp += card.vp}}
-    total_vp
+  def draw_hand
+    5.times { hand << @deck.delete_at(0) }
   end
 end
 
 player = Player.new
-p player.deck
-p player.eval_worth
 player.see_hand
-p player.eval_vp
+player.draw_hand
+player.see_hand
