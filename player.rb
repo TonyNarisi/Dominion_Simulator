@@ -49,7 +49,6 @@ class Player
     @hand.length.times {@discard_pile << @hand.delete_at(0)}
   end
 
-  # Need to add shuffle mechanism to randomize deck
   def shuffle_deck_from_discard
     @discard_pile.length.times {@deck << @discard_pile.delete_at(0)}
     @deck.shuffle!
